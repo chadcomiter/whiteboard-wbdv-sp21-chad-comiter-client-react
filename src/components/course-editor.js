@@ -1,8 +1,12 @@
 import React from 'react'
 
-const CourseEditor = () =>
+
+const CourseEditor = ({props}) =>
 <div class="container">
 <h1>Course Editor</h1>
+
+<i onClick={() => props.history.goBack()}className="fas fa-arrow-left fa-2x float-left"></i>
+
 <div class="row">
     <div class="col-4">
         <ul class="list-group">
