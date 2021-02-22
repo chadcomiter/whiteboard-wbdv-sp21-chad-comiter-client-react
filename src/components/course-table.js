@@ -11,12 +11,14 @@ export default class CourseTable extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/courses/grid">
-          <i className="fas fa-2x fa-th float-right"></i>
-        </Link>
         <h2>Course Table</h2>
+        <Link to="/courses/grid">
+                <i className="fas fa-2x fa-th float-right"></i>
+        </Link>
         <table className="table">
+          
           <tbody>
+              
             {this.props.courses.map((course, ndx) => (
               <CourseRow
                 deleteCourse={this.props.deleteCourse}

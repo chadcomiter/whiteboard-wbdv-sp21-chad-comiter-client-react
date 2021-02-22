@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 
-
 const CourseRow = (
     {
         deleteCourse,
@@ -41,8 +40,8 @@ const CourseRow = (
                     className="form-control"/>
             }
         </td>
-        <td>{owner}</td>
-        <td>{lastModified}</td>
+        <td className="hideOnMobile">{owner}</td>
+        <td className="hideOnMobile">{lastModified}</td>
         <td>
             <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
             {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}

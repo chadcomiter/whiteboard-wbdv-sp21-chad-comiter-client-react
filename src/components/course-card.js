@@ -21,7 +21,7 @@ const CourseCard = (
         updateCourse(newCourse)
     }
     return (
-    <div className="col-4">
+    <div className="col-xl-3 col-lg-4 col-sm-6 col-xs-12">
         <div className="card">
             <div className="card-body"> 
                 <h5 className="card-title">

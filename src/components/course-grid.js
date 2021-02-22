@@ -11,7 +11,7 @@ const CourseGrid = ({
 
     }) => {
     return (
-    <div>
+    <div class="container">
         <Link to="/courses/table">
             <i className="fas fa-list fa-2x float-right"></i>
         </Link>
