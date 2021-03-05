@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-
+import React, {useState} from 'react'
+import {Link} from "react-router-dom";
 
 const CourseRow = (
     {
@@ -12,7 +11,7 @@ const CourseRow = (
         owner
     }) => {
     const [editing, setEditing] = useState(false)
-    const [newTitle, setNewTitle] = useState(course.title)
+    const [newTitle, setNewTitle] = useState(title)
 
     const saveTitle = () => {
         setEditing(false)
@@ -28,7 +27,7 @@ const CourseRow = (
         <td>
             {
                 !editing &&
-                <Link to="/courses/editor">
+                <Link to={`/courses/editor/${course._id}`}>
                     {title}
                 </Link>
             }
@@ -40,8 +39,8 @@ const CourseRow = (
                     className="form-control"/>
             }
         </td>
-        <td className="hideOnMobile">{owner}</td>
-        <td className="hideOnMobile">{lastModified}</td>
+        <td>{owner}</td>
+        <td>{lastModified}</td>
         <td>
             <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
             {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
