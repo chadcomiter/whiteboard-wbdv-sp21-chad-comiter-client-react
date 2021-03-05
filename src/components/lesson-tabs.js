@@ -65,11 +65,11 @@ const dtpm = (dispatch) => ({
                 type: "DELETE_LESSON",
                 lessonToDelete: item
             })),
-    updateLesson: (item) => 
-        lessonService.updateLesson(item._id, item)
+    updateLesson: (lesson) => 
+        lessonService.updateLesson(lesson._id, lesson)
             .then(status => dispatch({
                 type: "UPDATE_LESSON",
-                item
+                lessonToUpdate: lesson
             })),
     findLessonsForModule: (moduleId) => {
         console.log("LOAD LESSONS FOR MODULE:")

@@ -32,5 +32,5 @@ export const updateLesson = (lessonId, lesson) =>
         .then(response => response.json())
 
 export default {
-    findLessonsForModule, createLessonForModule, deleteLesson
+    findLessonsForModule, createLessonForModule, deleteLesson, updateLesson
 }
