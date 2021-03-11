@@ -29,8 +29,6 @@ const CourseEditor = ({history}) => {
                     <i className="fas fa-arrow-left"></i>
                 </Link>
                 Course Editor
-                <i onClick={() => history.goBack()}
-                   className="fas fa-times float-right"></i>
             </h2>
             <div className="row">
                 <div className="col-4">

@@ -27,7 +27,7 @@ const CourseCard = (
                 <h5 className="card-title">
                     {
                     !editing &&
-                    <Link to={`/courses/table/editor/${course._id}`}>
+                    <Link to={`/courses/grid/editor/${course._id}`}>
                         {course.title}
                     </Link>
                     }

@@ -62,6 +62,12 @@ class CourseManager extends React.Component {
   render() {
     return(
       <div>
+        <Link to="/courses/table" className="list-group-item col-2">
+                Courses Table
+            </Link>
+            <Link to="/courses/grid" className="list-group-item col-2">
+                Courses Grid
+            </Link>
         <h1>Course Manager</h1>
         <button onClick={this.addCourse}>Add Course</button>
         <Route path="/courses/table"
@@ -79,7 +85,7 @@ class CourseManager extends React.Component {
               deleteCourse={this.deleteCourse}
               updateCourse={this.updateCourse}
               courses={this.state.courses}
-              layout={"grid"}/>
+              layout={'grid'}/>
         </Route>
         <Route path={[
               "/courses/:layout/editor/:courseId",
