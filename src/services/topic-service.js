@@ -12,7 +12,7 @@ export const createTopic = (lessonId, topic) =>
         .then(response => response.json())
 
 export const findTopicsForLesson = (lessonId) =>
-    fetch(`${LESSONS_URL}/${lessonId}/lessons`)
+    fetch(`${LESSONS_URL}/${lessonId}/topics`)
         .then(response => response.json())
 
 export const deleteTopic = (topicId) => 

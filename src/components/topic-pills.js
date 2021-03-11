@@ -12,7 +12,7 @@ const TopicPills = (
         deleteTopic,
         updateTopic
     }) => {
-        const {courseId, moduleId, lessonId, topicId} = useParams();
+        const {courseId, moduleId, lessonId, topicId, layout} = useParams();
         useEffect(() => {
             console.log("LOAD TOPICS FOR LESSON: " + lessonId)
             if(lessonId !== "undefined" && typeof lessonId !== "undefined"){
@@ -27,8 +27,8 @@ const TopicPills = (
                         topics.map(topic =>
                             <li className="nav-item">
                                 <EditableItem
-                                active={topic._id === topicId}
-                                to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+                                active={topic._id === topicId ? true : false}
+                                //to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
                                 deleteItem={deleteTopic}
                                 updateItem={updateTopic}
                                 item={topic}
