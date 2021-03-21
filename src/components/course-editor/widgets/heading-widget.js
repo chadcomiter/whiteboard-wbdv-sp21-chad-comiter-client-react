@@ -16,6 +16,15 @@ const HeadingWidget = ({widget, deleteWidget, updateWidget}) => {
                            deleteWidget(widget.id)
                            setEditing(false)
                        }} className="fas fa-ban float-right"></i>
+                    <select value={cachedWidget.type}
+                        onChange={(event) =>
+                            setCachedWidget({
+                                ...cachedWidget,
+                                type: event.target.value
+                            })} className="form-control">
+                        <option value={"PARAGRAPH"}>PARAGRAPH</option>
+                        <option value={"HEADING"}>HEADING</option>
+                    </select>
                     <input value={cachedWidget.text}
                        onChange={(event) => 
                         setCachedWidget({
