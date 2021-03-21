@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import EditableItem from "./editable-item";
 import {useParams} from "react-router-dom";
 import lessonService from '../services/lesson-service'
+import { findTopicsForLesson } from '../services/topic-service';
 
 const LessonTabs = (
     {
@@ -29,6 +30,7 @@ const LessonTabs = (
                         <EditableItem
                             active={lesson._id === lessonId ? true : false}
                             to={`/courses/${layout}/editor/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
+                            exact={true}
                             deleteItem={deleteLesson}
                             updateItem={updateLesson}
                             item={lesson}

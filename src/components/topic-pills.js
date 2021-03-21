@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import EditableItem from "./editable-item";
 import {useParams} from "react-router-dom";
 import topicService from '../services/topic-service'
+import {Link} from 'react-router-dom'
 
 const TopicPills = (
     {
@@ -18,7 +19,7 @@ const TopicPills = (
             if(lessonId !== "undefined" && typeof lessonId !== "undefined"){
                 findTopicsForLesson(lessonId)
             }
-        }, [moduleId, lessonId])
+        }, [lessonId])
         return (
             <div>
                 <h2>Topics</h2>
@@ -27,8 +28,9 @@ const TopicPills = (
                         topics.map(topic =>
                             <li className="nav-item">
                                 <EditableItem
+                                to={`/courses/:layout/editor/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
+                                exact={true}
                                 active={topic._id === topicId ? true : false}
-                                //to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
                                 deleteItem={deleteTopic}
                                 updateItem={updateTopic}
                                 item={topic}
