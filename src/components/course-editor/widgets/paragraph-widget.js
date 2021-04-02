@@ -24,6 +24,8 @@ const ParagraphWidget = ({widget, deleteWidget, updateWidget}) => {
                             })} className="form-control">
                         <option value={"PARAGRAPH"}>PARAGRAPH</option>
                         <option value={"HEADING"}>HEADING</option>
+                        <option value={"LIST"}>LIST</option>
+                        <option value={"IMAGE"}>IMAGE</option>
                     </select>
                     <textarea
                         className="form-control"
