@@ -3,23 +3,27 @@ import {useParams} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Question from '../questions/question'
 import questionService from '../../services/question-service';
+import QuizService from '../../services/quiz-service';
 
 const Quiz = (
     {
         questions = [],
-        findQuestionsForQuiz
+        findQuestionsForQuiz,
+        findAttemptsByQuizId
     }
 ) => {
+
     const{quizId} = useParams()
     useEffect(() => {
         findQuestionsForQuiz(quizId)
+        
     }, [])
     return (
         <div>
-            <h2 className="quiz-header">
+            <h2 className="">
                 Quiz {quizId}
             </h2>
-            <ol className="quiz-list"> 
+            <ol className=""> 
                 {
                     questions.map((question =>
                         <Question question={question}/>

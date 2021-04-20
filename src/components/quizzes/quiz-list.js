@@ -15,7 +15,7 @@ const QuizList = (
     const {courseId} = useParams()
     return (
         <div>
-            <h2 className="quiz-list-header">
+            <h2 className="">
                 Quizzes
             </h2>
             <br/>

@@ -41,6 +41,9 @@ const CourseCard = (
                 </h5>
                 <p className="card-text">Owner: {course.owner}<br></br> Last Modifed: {course.lastModified}</p>
                 <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png" className="card-img-top" alt="..."/>
+                <Link to={`/courses/${course._id}/quizzes`}>
+                    Quizzes
+                </Link>
                 <Link to="/courses/editor" className="btn btn-primary">{course.title}</Link>
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit fa-2x float-right"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check fa-2x float-right"></i>}
