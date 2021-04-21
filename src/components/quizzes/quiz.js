@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Question from '../questions/question'
@@ -14,10 +14,19 @@ const Quiz = (
 ) => {
 
     const{quizId} = useParams()
+    const [completed, setCompleted] = useState(false);
     useEffect(() => {
         findQuestionsForQuiz(quizId)
         
     }, [])
+    const answers = [];
+    const addAns = (question, answer) => {
+        const ans = {
+            ...question,
+            answer: answer
+        }
+        answers.push(ans);
+    }
     return (
         <div>
             <h2 className="">
@@ -26,11 +35,21 @@ const Quiz = (
             <ol className=""> 
                 {
                     questions.map((question =>
-                        <Question question={question}/>
+                        <Question question={question} addAns={addAns}/>
                     ))
                 }
             </ol>
             <br/>
+            <div className="row">
+                <div className="col-4">
+                    <button className="btn"
+                        onClick={() => {
+                            QuizService.submitQuiz(quizId, answers);
+                            setCompleted(true)
+                        }}
+                    >Submit</button>
+                </div>
+            </div>
         </div>
     )
 }

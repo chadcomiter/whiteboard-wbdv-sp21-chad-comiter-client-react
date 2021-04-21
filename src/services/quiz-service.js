@@ -1,15 +1,15 @@
 export const findAllQuizzes = () => {
-    return fetch(`http://localhost:3200/api/quizzes`)
+    return fetch(`https://whiteboard-ccomiter-node.herokuapp.com/api/quizzes`)
         .then(response => response.json())
 }
 
 export const findQuizById = (quizId) => {
-    return fetch(`http://localhost:3200/api/quizzes/${quizId}`)
+    return fetch(`https://whiteboard-ccomiter-node.herokuapp.com/api/quizzes/${quizId}`)
         .then(response => response.json())
 }
 
 export const submitQuiz = (quizId, questions) => 
-    fetch(`http://localhost:3200/api/quizzes/${quizId}/attempts`, {
+    fetch(`https://whiteboard-ccomiter-node.herokuapp.com/api/quizzes/${quizId}/attempts`, {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json',

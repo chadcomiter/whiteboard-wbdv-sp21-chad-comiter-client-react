@@ -1,5 +1,5 @@
 export const findQuestionsForQuiz = (quizId) => 
-    fetch(`http://localhost:3200/api/quizzes/${quizId}/questions`)
+    fetch(`https://whiteboard-ccomiter-node.herokuapp.com/api/quizzes/${quizId}/questions`)
         .then(response => response.json())
 
 const api = {
