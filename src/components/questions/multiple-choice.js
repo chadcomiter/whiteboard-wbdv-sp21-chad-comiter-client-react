@@ -34,7 +34,9 @@ const MultipleChoice = ({question, addAns}) => {
                                             <input type="radio"
                                                 className="radio-button"
                                                 name={question._id}
-                                                onClick={() => setChoice(choice)}/>
+                                                onClick={() => {
+                                                    setChoice(choice);
+                                                    }}/>
                                                 {choice}
                                         </label>
                                     </li>
@@ -47,7 +49,10 @@ const MultipleChoice = ({question, addAns}) => {
             </li>
             <div className="row">
                 <div classNAme="col-4">
-                    <button className="btn" onClick={() => setGraded(true)}>
+                    <button className="btn" onClick={() => {
+                             setGraded(true);
+                             addAns(question, choice);
+                             }}>
                         Score
                     </button>
                 </div>

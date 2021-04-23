@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const TrueFalse = ({question}) => {
+const TrueFalse = ({question, addAns}) => {
     const [choice, setChoice] = useState("")
     const [graded, setGraded] = useState(false)
     const score = (q) => {
@@ -50,7 +50,10 @@ const TrueFalse = ({question}) => {
             <div className="row">
                 <div className="col-4">
                     <button className="btn"
-                        onClick={() => setGraded(true)}>
+                        onClick={() => {
+                            setGraded(true);
+                            addAns(question, choice);
+                            }}>
                             Score
                     </button>
                 </div>
